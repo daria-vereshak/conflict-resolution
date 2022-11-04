@@ -1,12 +1,11 @@
-const insertionSort = arr => {
-    for (let i = 1, l = arr.length; i < l; i++) {
-        const current = arr[i];
-        let j = i;
-        while (j > 0 && arr[j - 1] > current) {
-            arr[j] = arr[j - 1];
-            j--;
-        }
-        arr[j] = current;
-    }
-    return arr;
-};
+function InsertionSort(A)      
+{                              
+    let n = A.length;
+    for (let i = 0; i < n; i++)
+     { let v = A[ i ], j = i-1;
+       while (j >= 0 && A[j] > v)
+        { A[j+1] = A[j]; j--; }
+       A[j+1] = v;
+     }                    
+    return A;   
+}
