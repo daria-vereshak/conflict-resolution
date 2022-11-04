@@ -1,17 +1,13 @@
-function quickSort(items, left, right) {
-    var index;
-    if (items.length > 1) {
-        left = typeof left != "number" ? 0 : left;
-        right = typeof right != "number" ? items.length - 1 : right;
-        index = partition(items, left, right);
-        if (left < index - 1) {
-            quickSort(items, left, index - 1);
-        }
-        if (index < right) {
-            quickSort(items, index, right);
-        }
-    }
-    return items;
+function InsertionSort(A)      
+{                              
+    let n = A.length;
+    for (let i = 0; i < n; i++)
+     { let v = A[ i ], j = i-1;
+       while (j >= 0 && A[j] > v)
+        { A[j+1] = A[j]; j--; }
+       A[j+1] = v;
+     }                    
+    return A;   
 }
 // first call
-var result = quickSort(items);
+var result = InsertionSort(items);
