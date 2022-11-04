@@ -1,17 +1,17 @@
-function bubbleSortConcept2(arr) {
-  let swapped;
-
-  do {
-    swapped = false;
-    console.log(arr);
-    arr.forEach((item, index) => {
-      if (item > arr[index + 1]) {
-        // Save the value to a variable so we don't lose it
-        let temp = item;
-        arr[index] = arr[index + 1];
-        arr[index + 1] = temp;
-        swapped = true;
-      }
-    })
-  } while (swapped);
+function quickSort(items, left, right) {
+    var index;
+    if (items.length > 1) {
+        left = typeof left != "number" ? 0 : left;
+        right = typeof right != "number" ? items.length - 1 : right;
+        index = partition(items, left, right);
+        if (left < index - 1) {
+            quickSort(items, left, index - 1);
+        }
+        if (index < right) {
+            quickSort(items, index, right);
+        }
+    }
+    return items;
 }
+// first call
+var result = quickSort(items);
