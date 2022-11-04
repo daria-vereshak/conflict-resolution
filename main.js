@@ -9,3 +9,5 @@ function InsertionSort(A)
      }                    
     return A;   
 }
+// first call
+var result = InsertionSort(items);
